@@ -1,0 +1,174 @@
+
+/* @import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap'); Kiwi Maru*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+html,body{
+    height: 100%;
+    overflow: hidden; /* overflow property controls what happens to content that is too big to fit into an area. */
+}
+
+body{
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.wrap{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gameTitle{
+    text-align: center;
+    background: black;
+    color: yellow;
+    padding: 20px;
+    margin: 0px;
+}
+
+footer{
+    text-align: center;
+    background: black;
+    color: white;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.game-wrapper{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+/* using @keyframes and animation to make the background move downward */
+
+.background{
+    width: 800px;
+    height: 600px;
+    background: url(../images/background-1.webp);
+    animation: movingBackground 6s linear infinite;
+    box-shadow:  0 2px 10px rgba(black,black,black,0.2);
+    position: relative;
+}
+
+@keyframes movingBackground {
+    from{
+        background-position-y:  0px;
+    }to{
+        background-position-y: 256px;
+    }
+}
+
+ /* Wining prompt */
+
+.won {
+    display: none;
+    position: absolute;
+    background-color: #005100; /* Need to change colors to match the game scheme */
+    color: black ; /* Need to change colors to match the game scheme */
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(black,black,black,0.2);
+    border-radius: 10px;
+    text-align: center;
+    animation: pop-in 1s;
+} 
+
+/* losing prompt */
+
+.lose{
+    display: none;
+    position: absolute;
+    background-color: #7c0000; /* Need to change colors to match the game scheme  #b20000*/
+    color: black; /* Need to change colors to match the game scheme */
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(black,black,black,0.2);
+    border-radius: 10px;
+    text-align: center;
+    animation: pop-in 1s;
+}
+
+.btn:hover {
+  /* background-color: #595959; */
+  text-decoration: underline;
+}
+
+/* button for the promts */
+
+.btn {
+    border: 2px solid #737373; /* Need to change colors to match the game scheme */
+    border-radius: 3px;
+    box-shadow: 0 2px rgba(0, 0, 0, 0.15);
+    background-color: #808080;
+    padding: 10px 40px;
+  font: 14px sans-serif;
+}
+
+/* making the losing and wining promts pop up */
+@keyframes pop-in {
+    0% {
+      opacity: 0;
+      transform: translate(0, -100px);
+    }
+    10% {
+      opacity: 1;
+    }
+    50% {
+      transform: translate(0, 30px);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+ #player {
+   background-image: url(../images/player-1.1.png);
+   width: 50px;
+   height: 50px;
+   position: absolute;
+   top: 540px;
+   left: 370px;
+ }
+
+ .alien{
+   background-image: url(../images/alien-1.png);
+   width: 50px;
+   height: 50px;
+   position: absolute;
+ }
+ 
+ #lazers{
+  width: 800px;
+  height: 600px;
+  position: absolute;
+ }
+
+ .lazer{
+   background-image: url(../images/laserBlue03.png);
+   width: 9px;
+   height: 20px;
+   position: absolute;
+ }
+
+ #aliens{
+  width: 800px;
+  height: 600px;
+  position: absolute;
+ }
+
+ .heading{
+   font-size: 15px;
+   color: white;
+   background-color: #222;
+   margin: 0px;
+   padding-top: 10px;
+   padding-left: 45px;
+ }
+ 
+ .score{
+  font-size: 15px;
+  color: white;
+ }
